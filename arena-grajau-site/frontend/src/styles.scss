@@ -1,0 +1,132 @@
+/* ============================================================
+   ARENA GRAJAÚ — design tokens
+   Paleta inspirada no brasão pintado no muro do campo:
+   preto de quadra, laranja de bairro e branco cal.
+   ============================================================ */
+:root {
+  --preto-quadra: #14110f;
+  --laranja-bairro: #f2600c;
+  --laranja-forte: #ff7a1a;
+  --branco-cal: #f5f1e8;
+  --cinza-concreto: #8b8680;
+  --vermelho-ribbon: #b21f1f;
+
+  --fonte-display: 'Bebas Neue', sans-serif;
+  --fonte-corpo: 'Inter', system-ui, sans-serif;
+  --fonte-assinatura: 'Permanent Marker', cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-corpo);
+  background: var(--branco-cal);
+  color: var(--preto-quadra);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--laranja-bairro);
+}
+
+/* Botões ------------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.btn--primary {
+  background: var(--laranja-bairro);
+  color: #14110f;
+
+  &:hover {
+    background: var(--laranja-forte);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(242, 96, 12, 0.35);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--branco-cal);
+  border-color: rgba(245, 241, 232, 0.4);
+
+  &:hover {
+    border-color: var(--branco-cal);
+    transform: translateY(-2px);
+  }
+}
+
+.btn--whatsapp {
+  background: #25d366;
+  color: #0b1a10;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
+  }
+}
+
+/* Reveal ao rolar a página -------------------------------------- */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-init,
+  .reveal-visible {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}

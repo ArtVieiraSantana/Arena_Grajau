@@ -1,0 +1,40 @@
+<section id="localizacao" class="location">
+  <div class="container location__grid">
+    <div class="location__info" appScrollReveal>
+      <span class="eyebrow">Onde treinamos</span>
+      <h2>Bem no coração do Grajaú</h2>
+      <p>
+        Venha conhecer o campo pessoalmente. Estamos de portas abertas para
+        famílias e crianças que querem começar no futebol de bairro.
+      </p>
+
+      <ul class="location__list">
+        <li>
+          <strong>Endereço</strong>
+          <span>Grajaú, São Paulo - SP<br />(TODO: complete com rua e número)</span>
+        </li>
+        <li>
+          <strong>Dias de treino</strong>
+          <span>Segunda a sábado, conforme a categoria</span>
+        </li>
+        <li>
+          <strong>Contato</strong>
+          <span>Fale com a gente pelo WhatsApp para agendar uma visita</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="location__map" appScrollReveal [revealDelay]="150">
+      <iframe
+        [src]="mapaUrl"
+        width="100%"
+        height="100%"
+        style="border:0"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa da região do Grajaú, São Paulo"
+      ></iframe>
+    </div>
+  </div>
+</section>
